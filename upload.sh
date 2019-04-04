@@ -1,3 +1,12 @@
 #!/bin/bash
-cp -f out/target/product/mha/mha.json api/mha.json;
-rsync -avP -e ssh $(ls out/target/product/mha/RR-P*.zip) xlagjn@frs.sourceforge.net:/home/frs/project/xlagjn-rr/MHA/
+OUT=out/target/product/mha;
+cp -f $OUT/mha.json api/mha.json;
+rsync -avP -e ssh $(ls $OUT/RR-P*.zip) xlagjn@frs.sourceforge.net:/home/frs/project/xlagjn-rr/MHA/;
+touch gittemp.txt;
+basename -s .zip $(ls $OUT/RR-P*.zip) > gittemp.txt;
+cd api;
+git add mha.json;
+git commit -F ../gittemp.txt ;
+git push;
+cd ..;
+rm -f gittemp.txt
