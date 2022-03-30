@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!--remote name="github" fetch="git://github.com/" /-->
+  
+  <project name="crdroidandroid/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="12.0" />
+  
+  <project name="leoxia007/device_xiaomi_odin" path="device/xiaomi/odin" remote="github" revision="crdroid-12.1" />
+  <project name="leoxia007/kernel_xiaomi_odin" path="kernel/xiaomi/odin" remote="github" revision="crdroid-12.1" />
+  <project name="leoxia007/vendor_xiaomi_odin" path="vendor/xiaomi/odin" remote="github" revision="lineage-19.1" />
+</manifest>
